@@ -58,34 +58,34 @@ https://localhost:8080/
 
   List all running containers:
 ```
-  sudo docker ps
+sudo docker ps
 ```
   Stop the running container:
 ```
-  sudo docker stop <container_id_or_name>
+sudo docker stop <container_id_or_name>
 ```
 ```
-  sudo docker stop ee4e1e203e8c
+sudo docker stop fe6b2c61496b
 ```
   Remove the container:
 ```
-  sudo docker rm <container_id_or_name>
+sudo docker rm <container_id_or_name>
 ```
 ```
-  sudo docker rm ee4e1e203e8c
+sudo docker rm fe6b2c61496b
 ```
   Remove the Docker image:
 ```
-  sudo docker rmi <container_id_or_name>
+sudo docker rmi <container_id_or_name>
 ```
 ```
-  sudo docker rmi -f <container_id_or_name>
+sudo docker rmi -f <container_id_or_name>
 ```
 ```
-  sudo docker rmi ee4e1e203e8c
+sudo docker rmi fe6b2c61496b
 ```
 ```
-  sudo docker rmi -f ee4e1e203e8c
+sudo docker rmi -f fe6b2c61496b
 ```
 
 ## Installation Reference:

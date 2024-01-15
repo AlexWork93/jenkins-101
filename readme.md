@@ -16,8 +16,9 @@ docker pull devopsjourney1/jenkins-blueocean:2.332.3-1 && docker tag devopsjourn
 ## Create the network 'jenkins'
 ```
 sudo docker network create jenkins
-
+```
 to see all networks:
+```
 sudo docker network ls
 ```
 
@@ -54,23 +55,36 @@ sudo docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPas
 https://localhost:8080/
 ```
 # Remove docker container:
-```
+
   List all running containers:
+```
   sudo docker ps
-
+```
   Stop the running container:
+```
   sudo docker stop <container_id_or_name>
+```
+```
   sudo docker stop ee4e1e203e8c
-
+```
   Remove the container:
+```
   sudo docker rm <container_id_or_name>
+```
+```
   sudo docker rm ee4e1e203e8c
-
+```
   Remove the Docker image:
+```
   sudo docker rmi <container_id_or_name>
+```
+```
   sudo docker rmi -f <container_id_or_name>
-
+```
+```
   sudo docker rmi ee4e1e203e8c
+```
+```
   sudo docker rmi -f ee4e1e203e8c
 ```
 

@@ -16,6 +16,9 @@ docker pull devopsjourney1/jenkins-blueocean:2.332.3-1 && docker tag devopsjourn
 ## Create the network 'jenkins'
 ```
 sudo docker network create jenkins
+
+to see all networks:
+sudo docker network ls
 ```
 
 ## Run the Container
@@ -51,6 +54,7 @@ sudo docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPas
 https://localhost:8080/
 ```
 # Remove docker container:
+```
   List all running containers:
   sudo docker ps
 
@@ -68,7 +72,7 @@ https://localhost:8080/
 
   sudo docker rmi ee4e1e203e8c
   sudo docker rmi -f ee4e1e203e8c
-
+```
 
 ## Installation Reference:
 https://www.jenkins.io/doc/book/installing/docker/

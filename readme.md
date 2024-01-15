@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=6YZvp2GwT0A
 # Installation
 ## Build the Jenkins BlueOcean Docker Image (or pull and use the one I built)
 ```
-docker build -t myjenkins-blueocean:2.426.2 .
+sudo docker build -t myjenkins-blueocean:2.426.2 .
 
 #IF you are having problems building the image yourself, you can pull from my registry (It is version 2.332.3-1 though, the original from the video)
 
@@ -15,13 +15,13 @@ docker pull devopsjourney1/jenkins-blueocean:2.332.3-1 && docker tag devopsjourn
 
 ## Create the network 'jenkins'
 ```
-docker network create jenkins
+sudo docker network create jenkins
 ```
 
 ## Run the Container
 ### MacOS / Linux
 ```
-docker run --name jenkins-blueocean --restart=on-failure --detach \
+sudo docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
   --publish 8080:8080 --publish 50000:50000 \
@@ -43,7 +43,7 @@ docker run --name jenkins-blueocean --restart=on-failure --detach `
 
 ## Get the Password
 ```
-docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
+sudo docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 ## Connect to the Jenkins
@@ -78,7 +78,7 @@ https://www.jenkins.io/doc/book/installing/docker/
 
 https://stackoverflow.com/questions/47709208/how-to-find-docker-host-uri-to-be-used-in-jenkins-docker-plugin
 ```
-docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
+sudo docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
 docker inspect <container_id> | grep IPAddress
 ```
 
